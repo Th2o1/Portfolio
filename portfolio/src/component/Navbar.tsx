@@ -5,6 +5,10 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTranslations } from '../i18n/useTranslation'; 
 
+import Logo from '../assets/logo.svg'; 
+import Langage from '../assets/language.svg'; 
+import Burger from '../assets/burger.svg'; 
+
 export default function Navbar() {
   //  ─── 1) Track the current language in state ───
   // You could initialize from localStorage or default to 'en'.
@@ -35,17 +39,21 @@ export default function Navbar() {
     <div className="flex items-center w-full">
   
       <button className="text-white text-2xl">
-        ☰
+        <Burger></Burger>
       </button>
 
   
-      <div className="flex-1 text-center">
-        <span className="text-white text-xl font-semibold">Logo</span>
+      <div className="flex-1 flex justify-center">
+        <Logo></Logo>
       </div>
 
   
-      <button className="text-white text-base">EN</button>
+      <button className="text-white text-base">
+        <Langage></Langage>
+        EN
+      </button>
     </div>
   </nav>
+
   );
 }
