@@ -30,7 +30,22 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="w-full bg-white dark:bg-gray-800 shadow-md">
-    </header>
+ 
+  <nav className="relative bg-transparent px-6 py-4">
+    <div className="flex items-center w-full">
+  
+      <button className="text-white text-2xl">
+        ☰
+      </button>
+
+  
+      <div className="flex-1 text-center">
+        <span className="text-white text-xl font-semibold">Logo</span>
+      </div>
+
+  
+      <button className="text-white text-base">EN</button>
+    </div>
+  </nav>
   );
 }
