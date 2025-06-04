@@ -38,7 +38,7 @@ export default function Navbar() {
   <nav className="relative bg-transparent px-6 py-4">
     <div className="flex items-center w-full">
   
-      <button className="text-white text-2xl">
+      <button className="">
         <Burger></Burger>
       </button>
 
@@ -48,7 +48,7 @@ export default function Navbar() {
       </div>
 
   
-      <button className="text-white text-base">
+      <button className=" text-base text-secondary">
         <Langage></Langage>
         EN
       </button>
