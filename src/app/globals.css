@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --begin-gradient: #13222F;
-  --end-gradient: #001E37;
+  --begin-gradient: #13222f;
+  --end-gradient: #001e37;
   --primary: #273442;
   --secondary: #455369;
-  --light: #EBEEEF;
+  --light: #ebeeef;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@theme inline {
+@theme {
   --color-background: var(--begin-gradient);
   --color-background-secondary: var(--end-gradient);
   --color-primary: var(--primary);

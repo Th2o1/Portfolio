@@ -17,7 +17,7 @@ export function ProfileCard({ name, role, avatarSrc }: ProfileCardProps) {
       {/* Text & Icons */}
       <div className="flex-1">
         {/* Name & Role */}
-        <h2 className="text-white text-xl font-semibold">{name}</h2>
+        <h2 className="text-light text-xl font-semibold">{name}</h2>
         <p className="text-gray-400 text-sm">{role}</p>
         {/* Icon Row */}
         <div className="mt-3 flex space-x-4 text-gray-300">
