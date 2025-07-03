@@ -6,9 +6,20 @@ import Timeline, { Entry } from "@/component/Timeline";
 
 const experience: Entry[] = [
   {
-    title: "Project Management",
+    title: "Intership - Project Manager",
     location: "Hager, Obernai",
-    date: "June 2024 - Aout 2024",
+    date: "June 2024 - August 2024",
+    projectLink: "https://example.com/project1",
+    details: [
+      "Led team to deliver internal tool",
+      "Improved workflow by 30%",
+      "Agile methodology",
+    ],
+  },
+  {
+    title: "Intership - Embedded Systems Developer",
+    location: "SO-CONNECT, Monswiller",
+    date: "June 2024 - August 2024",
     projectLink: "https://example.com/project1",
     details: [
       "Led team to deliver internal tool",
