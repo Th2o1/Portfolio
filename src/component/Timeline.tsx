@@ -19,43 +19,46 @@ export default function Timeline({ data }: TimelineProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <div className="bg-primary rounded-4xl w-full max-w-3xl ">
+    <div className="bg-primary rounded-4xl w-full max-w-3xl p-4">
       {data.map((entry, i) => (
-        <div
-          key={i}
-          onClick={() => setActiveIndex(activeIndex === i ? null : i)}
-          className="flex justify-between items-center p-2 w-full"
-        >
-          {/* Left column: title + position */}
-          <div className="w-60 p-2">
-            <h3 className="text-white font-mono font-bold">{entry.title}</h3>
-            <p className="text-gray-400 font-mono font-thin">
-              {entry.location}
-            </p>
-          </div>
+        <div key={i} className="mb-6 last:mb-0">
+          <div
+            onClick={() => setActiveIndex(activeIndex === i ? null : i)}
+            className="flex justify-between gap-3 items-center p-2 w-full"
+          >
+            {/* Left column: title + position */}
+            <div className="w-60 ">
+              <h3 className="text-white font-mono font-bold">{entry.title}</h3>
+              <p className="text-gray-400 font-mono font-thin">
+                {entry.location}
+              </p>
+            </div>
 
-          {/* Right column: fixed-width badge (date or link) */}
-          <div className="w-28 text-center rounded-full bg-secondary p-1">
-            {activeIndex === i && entry.projectLink ? (
-              <a
-                href={entry.projectLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-light hover:underline"
-              >
-                View Project
-              </a>
-            ) : (
-              <span className="text-xs text-light">{entry.date}</span>
+            {/* Right column: fixed-width badge (date or link) */}
+            <div className="w-2/5 self-start text-center rounded-full bg-secondary p-1 ">
+              {activeIndex === i && entry.projectLink ? (
+                <a
+                  href={entry.projectLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-light hover:underline"
+                >
+                  View Project
+                </a>
+              ) : (
+                <span className="text-xs text-light">{entry.date}</span>
+              )}
+            </div>
+          </div>
+          <div>
+            {activeIndex === i && entry.details && (
+              <ul className="mt-1 pl-5 list-disc text-sm text-white space-y-1 font-mono">
+                {entry.details.map((point, j) => (
+                  <li key={j}>{point}</li>
+                ))}
+              </ul>
             )}
           </div>
-          {activeIndex === i && entry.details && (
-            <ul className="mt-4 pl-5 list-disc text-sm text-white space-y-1 font-mono">
-              {entry.details.map((point, j) => (
-                <li key={j}>{point}</li>
-              ))}
-            </ul>
-          )}
         </div>
       ))}
     </div>
