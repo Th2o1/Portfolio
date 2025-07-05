@@ -20,18 +20,73 @@ const techItems: TechItem[] = [
   },
   {
     icon: (
-      <Image src="/icons/github-actions.svg" alt="GA" width={24} height={24} />
+      <Image
+        src="/assets/stack/c-program-icon.svg"
+        alt="GA"
+        width={48}
+        height={48}
+      />
     ),
     title: "GA",
     subtitle: "Test/Deployment Automation",
   },
   {
-    icon: <Image src="/icons/docker.svg" alt="Docker" width={24} height={24} />,
+    icon: (
+      <Image
+        src="/assets/stack/c-program-icon.svg"
+        alt="Docker"
+        width={48}
+        height={48}
+      />
+    ),
     title: "Docker",
     subtitle: "Environment Container",
   },
   {
-    icon: <Image src="/icons/git.svg" alt="Git" width={24} height={24} />,
+    icon: (
+      <Image
+        src="/assets/stack/c-program-icon.svg"
+        alt="Git"
+        width={48}
+        height={48}
+      />
+    ),
+    title: "Git",
+    subtitle: "Version Control",
+  },
+  {
+    icon: (
+      <Image
+        src="/assets/stack/c-program-icon.svg"
+        alt="Git"
+        width={48}
+        height={48}
+      />
+    ),
+    title: "Git",
+    subtitle: "Version Control",
+  },
+  {
+    icon: (
+      <Image
+        src="/assets/stack/c-program-icon.svg"
+        alt="Git"
+        width={48}
+        height={48}
+      />
+    ),
+    title: "Git",
+    subtitle: "Version Control",
+  },
+  {
+    icon: (
+      <Image
+        src="/assets/stack/c-program-icon.svg"
+        alt="Git"
+        width={48}
+        height={48}
+      />
+    ),
     title: "Git",
     subtitle: "Version Control",
   },
