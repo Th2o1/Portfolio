@@ -18,3 +18,9 @@
   --color-secondary: var(--secondary);
   --color-light: var(--light);
 }
+
+@layer components {
+  .card {
+    @apply bg-primary rounded-4xl p-6 space-x-6;
+  }
+}

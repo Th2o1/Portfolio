@@ -12,7 +12,7 @@ export function AboutBlock({ title, content }: AboutBlockProps) {
       <h2 className="ml-3  text-2xl font-semibold text-light">{title}</h2>
 
       {/* Content container */}
-      <div className="bg-primary rounded-4xl p-6 space-x-6">
+      <div className="card">
         {content.map((line, i) => (
           <p key={i} className="text-light text-base">
             {line}

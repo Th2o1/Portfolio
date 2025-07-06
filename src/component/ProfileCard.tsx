@@ -9,7 +9,7 @@ type ProfileCardProps = {
 
 export function ProfileCard({ name, role, avatarSrc }: ProfileCardProps) {
   return (
-    <div className="flex items-center bg-primary rounded-4xl p-6 space-x-6">
+    <div className="flex items-center card max-w-[300px]">
       {/* Avatar */}
       <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
         <Image src={avatarSrc} alt={`${name} avatar`} width={96} height={96} />

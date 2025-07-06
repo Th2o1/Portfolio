@@ -16,7 +16,7 @@ const techItems: TechItem[] = [
       />
     ),
     title: "C",
-    subtitle: "Programming Language",
+    subtitle: "Language",
   },
   {
     icon: (
@@ -28,7 +28,7 @@ const techItems: TechItem[] = [
       />
     ),
     title: "GA",
-    subtitle: "Test/Deployment Automation",
+    subtitle: "Automation",
   },
   {
     icon: (
@@ -101,8 +101,8 @@ const aboutText = [
 
 export default function Home() {
   return (
-    <div className="bg- grid grid-rows-[auto] min-h-screen p-3 pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col space-y-8">
+    <div className="grid grid-rows-[auto] min-h-screen p-3 pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col space-y-8 items-center">
         <ProfileCard
           name="Ischia Théo"
           role="Embedded systems & DevOps"
