@@ -19,7 +19,7 @@ export default function Timeline({ data }: TimelineProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <div className="card w-3xl p-4">
+    <div className="card  p-4">
       {data.map((entry, i) => (
         <div key={i} className="mb-6 last:mb-0">
           <div
