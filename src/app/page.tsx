@@ -101,16 +101,26 @@ const aboutText = [
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[auto] min-h-screen p-3 pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col space-y-8 items-center">
+    <div className="grid grid-rows-[auto_1fr] min-h-screen max-w-screen-xl mx-auto p-3 pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
+      {/* Row 1: Centered profile card */}
+      <div className="flex justify-center">
         <ProfileCard
           name="Ischia Théo"
           role="Embedded systems & DevOps"
           avatarSrc="/assets/profile/avatar.png"
         />
-        <AboutBlock title="About me" content={aboutText} />
+      </div>
+
+      {/* Row 2: Two-column grid (About + TechStack on left, Experience on right) */}
+      <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Left column: About + TechStack stacked */}
+        <div className="flex flex-col gap-6">
+          <AboutBlock title="About me" content={aboutText} />
+          <TechStackCard items={techItems} />
+        </div>
+
+        {/* Right column: Experience */}
         <ExperienceCard />
-        <TechStackCard items={techItems} />
       </main>
     </div>
   );
