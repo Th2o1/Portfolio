@@ -26,15 +26,13 @@ export default function Timeline({ data }: TimelineProps) {
             onClick={() => setActiveIndex(activeIndex === i ? null : i)}
             className="w-full"
           >
-            <div className="flex w-full direction-row justify-between items-center">
-              <h3 className="text-white  font-bold text-center items-center">
-                {entry.title}
-              </h3>
+            <div className="flex w-full direction-row justify-between gap-5 items-center">
+              <h3 className="text-white  font-bold">{entry.title}</h3>
               {/* Right column: fixed-width badge (date or link) */}
               <div className="items-start  rounded-full bg-secondary p-2 ">
                 {activeIndex === i && entry.projectLink ? (
                   <svg
-                    className="w-5 h-5 fill-light
+                    className="w-7 h-7 fill-light
                   transition-transform duration-200 rotate-180"
                     viewBox="0 0 20 20"
                   >
@@ -42,7 +40,7 @@ export default function Timeline({ data }: TimelineProps) {
                   </svg>
                 ) : (
                   <svg
-                    className="w-5 h-5 fill-light
+                    className="w-7 h-7 fill-light
                   transition-transform duration-200"
                     viewBox="0 0 20 20"
                   >

@@ -47,6 +47,18 @@ const education: Entry[] = [
     date: "Sept 2021 - July 2024",
     details: ["Specialized in Embedded Systems", "Graduated with honors"],
   },
+  {
+    title: "License in Mathematic and Computer Science",
+    location: "University XYZ",
+    date: "Sept 2021 - July 2024",
+    details: ["Specialized in Embedded Systems", "Graduated with honors"],
+  },
+  {
+    title: "Master in science, internet, network and computer science",
+    location: "University XYZ",
+    date: "Sept 2021 - July 2024",
+    details: ["Specialized in Embedded Systems", "Graduated with honors"],
+  },
 ];
 
 export default function ExperienceCard() {
@@ -57,7 +69,7 @@ export default function ExperienceCard() {
   return (
     <div className="flex flex-col items-center ">
       {/* Toggle buttons */}
-      <div className="flex justify-between px-7 w-full">
+      <div className="flex justify-around sm:justify-center sm:gap-5 px-7 w-full">
         <button
           className={`font-semibold text-lg px-6 py-3 rounded-t-3xl ${selectedTab === "experience" ? "bg-primary text-light" : "bg-secondary text-light"}`}
           onClick={() => setSelectedTab("experience")}
