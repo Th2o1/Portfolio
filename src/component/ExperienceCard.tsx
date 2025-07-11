@@ -27,6 +27,17 @@ const experience: Entry[] = [
       "Agile methodology",
     ],
   },
+  {
+    title: "Intership - Embedded Systems Developer",
+    location: "SO-CONNECT, Monswiller",
+    date: "June 2024 - August 2024",
+    projectLink: "https://example.com/project1",
+    details: [
+      "Led team to deliver internal tool",
+      "Improved workflow by 30%",
+      "Agile methodology",
+    ],
+  },
 ];
 
 const education: Entry[] = [
