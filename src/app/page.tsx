@@ -1,5 +1,6 @@
 import { ProfileCard } from "@/component/ProfileCard";
 import { AboutBlock } from "@/component/AboutMe";
+import ProjectCard from "@/component/ProjectCard";
 import ExperienceCard from "@/component/ExperienceCard";
 import TechStackCard, { TechItem } from "@/component/TechStackCard";
 import Image from "next/image";
@@ -122,6 +123,11 @@ export default function Home() {
         {/* Right column: Experience */}
         <ExperienceCard />
       </main>
+      <ProjectCard
+        title="Testbed for the D50 card"
+        location="SO-CONNECT"
+        imageSrc="/assets/projects/avatar.png"
+      />
     </div>
   );
 }
