@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import Timeline, { Entry } from "@/component/Timeline";
+import Timeline, { Entry } from "@/components/Timeline";
 
 const experience: Entry[] = [
   {

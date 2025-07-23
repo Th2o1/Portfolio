@@ -1,8 +1,8 @@
-import { ProfileCard } from "@/component/ProfileCard";
-import { AboutBlock } from "@/component/AboutMe";
-import ProjectCard from "@/component/ProjectCard";
-import ExperienceCard from "@/component/ExperienceCard";
-import TechStackCard, { TechItem } from "@/component/TechStackCard";
+import { ProfileCard } from "@/components/ProfileCard";
+import { AboutBlock } from "@/components/AboutMe";
+import ProjectCard from "@/components/ProjectCard";
+import ExperienceCard from "@/components/ExperienceCard";
+import TechStackCard, { TechItem } from "@/components/TechStackCard";
 import Image from "next/image";
 
 // Items in tech stack
