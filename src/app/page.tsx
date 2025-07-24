@@ -3,6 +3,7 @@ import { AboutBlock } from "@/components/AboutMe";
 import ProjectCard from "@/components/ProjectCard";
 import ExperienceCard from "@/components/ExperienceCard";
 import TechStackCard, { TechItem } from "@/components/TechStackCard";
+import Carousel from "@/components/Carousel";
 import Image from "next/image";
 
 // Items in tech stack
@@ -100,6 +101,33 @@ const aboutText = [
   "I’m a lorem ipsum vitae jsp quoi",
 ];
 
+const SLIDES = [
+  <ProjectCard
+    key={1}
+    title="Testbed for the D50 card"
+    location="SO-CONNECT"
+    imageSrc="/assets/projects/avatar.png"
+  />,
+  <ProjectCard
+    key={2}
+    title="Testbed for the D50 card"
+    location="SO-CONNECT"
+    imageSrc="/assets/projects/avatar.png"
+  />,
+  <ProjectCard
+    key={1}
+    title="Testbed for the D50 card"
+    location="SO-CONNECT"
+    imageSrc="/assets/projects/avatar.png"
+  />,
+  <ProjectCard
+    key={2}
+    title="Testbed for the D50 card"
+    location="SO-CONNECT"
+    imageSrc="/assets/projects/avatar.png"
+  />,
+];
+
 export default function Home() {
   return (
     <div className="grid grid-rows-[auto_1fr] min-h-screen max-w-screen-xl mx-auto p-3 pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
@@ -123,11 +151,10 @@ export default function Home() {
         {/* Right column: Experience */}
         <ExperienceCard />
       </main>
-      <ProjectCard
-        title="Testbed for the D50 card"
-        location="SO-CONNECT"
-        imageSrc="/assets/projects/avatar.png"
-      />
+      <div className="w-full flex justify-center">
+        <h1 className="ml-3  text-4xl font-bold text-light">Project</h1>
+      </div>
+      <Carousel slides={SLIDES} />
     </div>
   );
 }
