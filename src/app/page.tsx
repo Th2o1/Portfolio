@@ -104,24 +104,88 @@ const aboutText = [
 const SLIDES = [
   <ProjectCard
     key={1}
+    icon={[
+      <Image
+        key="img1"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img2"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+    ]}
     title="Testbed for the D50 card"
     location="SO-CONNECT"
     imageSrc="/assets/projects/avatar.png"
   />,
   <ProjectCard
     key={2}
+    icon={[
+      <Image
+        key="img1"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img2"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+    ]}
     title="Testbed for the D50 card"
     location="SO-CONNECT"
     imageSrc="/assets/projects/avatar.png"
   />,
   <ProjectCard
     key={1}
+    icon={[
+      <Image
+        key="img1"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img2"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+    ]}
     title="Testbed for the D50 card"
     location="SO-CONNECT"
     imageSrc="/assets/projects/avatar.png"
   />,
   <ProjectCard
     key={2}
+    icon={[
+      <Image
+        key="img1"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img2"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+    ]}
     title="Testbed for the D50 card"
     location="SO-CONNECT"
     imageSrc="/assets/projects/avatar.png"

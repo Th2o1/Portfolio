@@ -4,12 +4,14 @@ type ProjectCardProps = {
   title: string;
   location: string;
   imageSrc: string;
+  icon: React.ReactNode[];
 };
 
 export default function ProjectCard({
   title,
   location,
   imageSrc,
+  icon,
 }: ProjectCardProps) {
   return (
     <div className="card p-4">
@@ -25,7 +27,9 @@ export default function ProjectCard({
         <p className="font-thin text-gray-400">{location}</p>
       </div>
       <div className="flex direction-row items-center p-3 w-full justify-between gap-5">
-        <div className="items-center  bg-secondary rounded-4xl p-5">Icon</div>
+        <div className="flex gap-5 items-center  bg-secondary rounded-4xl p-5">
+          {icon}
+        </div>
         <div className="border-4 border-secondary p-2 rounded-xl">
           <svg
             className="w-7 h-7 fill-light
