@@ -211,14 +211,13 @@ export default function Home() {
           <AboutBlock title="About me" content={aboutText} />
           <TechStackCard items={techItems} />
         </div>
+        <ExperienceCard />
 
         {/* Right column: Experience */}
-        <ExperienceCard />
       </main>
-      <div className="w-full flex justify-center">
-        <h1 className="ml-3  text-4xl font-bold text-light">Project</h1>
+      <div className="grid grid-cols-1 gap-6">
+        <Carousel slides={SLIDES} />
       </div>
-      <Carousel slides={SLIDES} />
     </div>
   );
 }

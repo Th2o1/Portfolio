@@ -14,7 +14,7 @@ export default function ProjectCard({
   icon,
 }: ProjectCardProps) {
   return (
-    <div className="card p-4">
+    <div className="card ">
       <Image
         className="w-full rounded-xl"
         src={imageSrc}
