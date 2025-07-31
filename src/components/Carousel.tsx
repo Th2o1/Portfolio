@@ -1,13 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Carousel({ slides }: { slides: React.ReactNode[] }) {
   const [index, setIndex] = useState(0);
   const total = slides.length;
 
+  const startX = useRef<number | null>(null);
+
   const prev = () => setIndex((prev) => (prev - 1 + total) % total);
   const next = () => setIndex((prev) => (prev + 1) % total);
+
+  // Mouse drag
+  const handleMouseDown = (e: React.MouseEvent) => {
+    startX.current = e.clientX;
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (startX.current === null) return;
+    const deltaX = e.clientX - startX.current;
+    if (deltaX > 50) prev();
+    else if (deltaX < -50) next();
+    startX.current = null;
+  };
+
+  // Touch drag (mobile)
+  const handleTouchStart = (e: React.TouchEvent) => {
+    startX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (startX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - startX.current;
+    if (deltaX > 50) prev();
+    else if (deltaX < -50) next();
+    startX.current = null;
+  };
 
   return (
     <section className="space-y-3">
@@ -16,7 +44,13 @@ export default function Carousel({ slides }: { slides: React.ReactNode[] }) {
       </h2>
       <div className="relative  w-full max-w-3xl max-h-[90vh] mx-auto">
         {/* Slides container */}
-        <div className="overflow-hidden rounded-xl">
+        <div
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          className="overflow-hidden rounded-xl cursor-grab active:cursor-grabbing"
+        >
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${index * 100}%)` }}
