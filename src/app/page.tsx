@@ -119,6 +119,27 @@ const SLIDES = [
         width={48}
         height={48}
       />,
+      <Image
+        key="img3"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img3"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img3"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
     ]}
     title="Testbed for the D50 card"
     location="SO-CONNECT"

@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import useIsSmallScreen from "../hooks/useIsSmallScreen";
 
 type ProjectCardProps = {
   title: string;
@@ -13,6 +15,7 @@ export default function ProjectCard({
   imageSrc,
   icon,
 }: ProjectCardProps) {
+  const isSmall = useIsSmallScreen();
   return (
     <div className="card ">
       <Image
@@ -27,8 +30,19 @@ export default function ProjectCard({
         <p className="font-thin text-gray-400">{location}</p>
       </div>
       <div className="flex direction-row items-center p-3 w-full justify-between gap-5">
-        <div className="flex gap-5 items-center  bg-secondary rounded-4xl p-5">
-          {icon}
+        <div className="flex gap-5 justify-center bg-secondary rounded-2xl p-3">
+          {icon.slice(0, 2).map((i, idx) => (
+            <div key={idx} className="w-10 h-10">
+              {i}
+            </div>
+          ))}
+          {/* Show more on medium and above */}
+          {!isSmall &&
+            icon.slice(2).map((i, idx) => (
+              <div key={idx + 100} className="w-10 h-10">
+                {i}
+              </div>
+            ))}
         </div>
         <div className="border-4 border-secondary p-2 rounded-xl">
           <svg
