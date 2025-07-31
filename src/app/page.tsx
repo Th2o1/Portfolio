@@ -1,8 +1,9 @@
-import { ProfileCard } from "@/component/ProfileCard";
-import { AboutBlock } from "@/component/AboutMe";
-import ProjectCard from "@/component/ProjectCard";
-import ExperienceCard from "@/component/ExperienceCard";
-import TechStackCard, { TechItem } from "@/component/TechStackCard";
+import { ProfileCard } from "@/components/ProfileCard";
+import { AboutBlock } from "@/components/AboutMe";
+import ProjectCard from "@/components/ProjectCard";
+import ExperienceCard from "@/components/ExperienceCard";
+import TechStackCard, { TechItem } from "@/components/TechStackCard";
+import Carousel from "@/components/Carousel";
 import Image from "next/image";
 
 // Items in tech stack
@@ -100,6 +101,118 @@ const aboutText = [
   "I’m a lorem ipsum vitae jsp quoi",
 ];
 
+const SLIDES = [
+  <ProjectCard
+    key={1}
+    icon={[
+      <Image
+        key="img1"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img2"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img3"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img3"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img3"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+    ]}
+    title="Testbed for the D50 card"
+    location="SO-CONNECT"
+    imageSrc="/assets/projects/avatar.png"
+  />,
+  <ProjectCard
+    key={2}
+    icon={[
+      <Image
+        key="img1"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img2"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+    ]}
+    title="Testbed for the D50 card"
+    location="SO-CONNECT"
+    imageSrc="/assets/projects/avatar.png"
+  />,
+  <ProjectCard
+    key={1}
+    icon={[
+      <Image
+        key="img1"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img2"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+    ]}
+    title="Testbed for the D50 card"
+    location="SO-CONNECT"
+    imageSrc="/assets/projects/avatar.png"
+  />,
+  <ProjectCard
+    key={2}
+    icon={[
+      <Image
+        key="img1"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+      <Image
+        key="img2"
+        src="/assets/stack/c-program-icon.svg"
+        alt="Project 1"
+        width={48}
+        height={48}
+      />,
+    ]}
+    title="Testbed for the D50 card"
+    location="SO-CONNECT"
+    imageSrc="/assets/projects/avatar.png"
+  />,
+];
+
 export default function Home() {
   return (
     <div className="grid grid-rows-[auto_1fr] min-h-screen max-w-screen-xl mx-auto p-3 pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
@@ -119,15 +232,13 @@ export default function Home() {
           <AboutBlock title="About me" content={aboutText} />
           <TechStackCard items={techItems} />
         </div>
+        <ExperienceCard />
 
         {/* Right column: Experience */}
-        <ExperienceCard />
       </main>
-      <ProjectCard
-        title="Testbed for the D50 card"
-        location="SO-CONNECT"
-        imageSrc="/assets/projects/avatar.png"
-      />
+      <div className="grid grid-cols-1 gap-6">
+        <Carousel slides={SLIDES} />
+      </div>
     </div>
   );
 }
