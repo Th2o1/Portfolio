@@ -6,212 +6,39 @@ import TechStackCard, { TechItem } from "@/components/TechStackCard";
 import Carousel from "@/components/Carousel";
 import Image from "next/image";
 
-// Items in tech stack
-const techItems: TechItem[] = [
-  {
-    icon: (
-      <Image
-        src="/assets/stack/c-program-icon.svg"
-        alt="C"
-        width={48}
-        height={48}
-      />
-    ),
-    title: "C",
-    subtitle: "Language",
-  },
-  {
-    icon: (
-      <Image
-        src="/assets/stack/c-program-icon.svg"
-        alt="GA"
-        width={48}
-        height={48}
-      />
-    ),
-    title: "GA",
-    subtitle: "Automation",
-  },
-  {
-    icon: (
-      <Image
-        src="/assets/stack/c-program-icon.svg"
-        alt="Docker"
-        width={48}
-        height={48}
-      />
-    ),
-    title: "Docker",
-    subtitle: "Environment Container",
-  },
-  {
-    icon: (
-      <Image
-        src="/assets/stack/c-program-icon.svg"
-        alt="Git"
-        width={48}
-        height={48}
-      />
-    ),
-    title: "Git",
-    subtitle: "Version Control",
-  },
-  {
-    icon: (
-      <Image
-        src="/assets/stack/c-program-icon.svg"
-        alt="Git"
-        width={48}
-        height={48}
-      />
-    ),
-    title: "Git",
-    subtitle: "Version Control",
-  },
-  {
-    icon: (
-      <Image
-        src="/assets/stack/c-program-icon.svg"
-        alt="Git"
-        width={48}
-        height={48}
-      />
-    ),
-    title: "Git",
-    subtitle: "Version Control",
-  },
-  {
-    icon: (
-      <Image
-        src="/assets/stack/c-program-icon.svg"
-        alt="Git"
-        width={48}
-        height={48}
-      />
-    ),
-    title: "Git",
-    subtitle: "Version Control",
-  },
-];
-// Text thats going in the about me section
-const aboutText = [
-  "I’m a lorem ipsum vitae jsp quoi I’m a lorem ipsum vitae jsp quoi",
-  "I’m a lorem ipsum vitae jsp quoi",
-  "I’m a lorem ipsum vitae jsp quoi",
-  "I’m a lorem ipsum vitae jsp quoi",
-];
+// Data imports
+import { aboutText } from "../data/about";
 
-const SLIDES = [
+import { techData } from "../data/tech";
+
+import { projectsData } from "@/data/projects";
+
+// --- Map data -> UI props ---
+const techItems: TechItem[] = techData.map((t) => ({
+  // Map icon path -> <Image/> (keeps data clean)
+  icon: <Image src={t.iconSrc} alt={t.alt} width={48} height={48} />,
+  title: t.title,
+  subtitle: t.subtitle,
+}));
+
+const SLIDES = projectsData.map((p, idx) => (
   <ProjectCard
-    key={1}
-    icon={[
+    key={idx}
+    // Map icon paths -> <Image/> list
+    icon={p.iconSrcs.map((src, i) => (
       <Image
-        key="img1"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
+        key={`${p.title}-icon-${i}`}
+        src={src}
+        alt={`${p.title} icon`}
         width={48}
         height={48}
-      />,
-      <Image
-        key="img2"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-      <Image
-        key="img3"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-      <Image
-        key="img3"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-      <Image
-        key="img3"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-    ]}
-    title="Testbed for the D50 card"
-    location="SO-CONNECT"
-    imageSrc="/assets/projects/avatar.png"
-  />,
-  <ProjectCard
-    key={2}
-    icon={[
-      <Image
-        key="img1"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-      <Image
-        key="img2"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-    ]}
-    title="Testbed for the D50 card"
-    location="SO-CONNECT"
-    imageSrc="/assets/projects/avatar.png"
-  />,
-  <ProjectCard
-    key={1}
-    icon={[
-      <Image
-        key="img1"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-      <Image
-        key="img2"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-    ]}
-    title="Testbed for the D50 card"
-    location="SO-CONNECT"
-    imageSrc="/assets/projects/avatar.png"
-  />,
-  <ProjectCard
-    key={2}
-    icon={[
-      <Image
-        key="img1"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-      <Image
-        key="img2"
-        src="/assets/stack/c-program-icon.svg"
-        alt="Project 1"
-        width={48}
-        height={48}
-      />,
-    ]}
-    title="Testbed for the D50 card"
-    location="SO-CONNECT"
-    imageSrc="/assets/projects/avatar.png"
-  />,
-];
+      />
+    ))}
+    title={p.title}
+    location={p.location}
+    imageSrc={p.imageSrc}
+  />
+));
 
 export default function Home() {
   return (
@@ -232,10 +59,12 @@ export default function Home() {
           <AboutBlock title="About me" content={aboutText} />
           <TechStackCard items={techItems} />
         </div>
-        <ExperienceCard />
 
         {/* Right column: Experience */}
+        <ExperienceCard />
       </main>
+
+      {/* Projects Carousel */}
       <div className="grid grid-cols-1 gap-6">
         <Carousel slides={SLIDES} />
       </div>

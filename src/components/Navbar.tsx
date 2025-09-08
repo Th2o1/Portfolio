@@ -5,8 +5,8 @@
 //import { useTranslations } from '../i18n/useTranslation';
 
 import Logo from "../assets/logo.svg";
-import Langage from "../assets/language.svg";
-import Burger from "../assets/burger.svg";
+//import Langage from "../assets/language.svg";
+//import Burger from "../assets/burger.svg";
 
 export default function Navbar() {
   //  ─── 1) Track the current language in state ───
@@ -35,17 +35,15 @@ export default function Navbar() {
   return (
     <nav className="relative bg-transparent px-6 py-4">
       <div className="flex items-center w-full">
-        <button className="">
-          <Burger></Burger>
-        </button>
+        <button className="">{/* <Burger></Burger> */}</button>
 
         <div className="flex-1 flex justify-center">
           <Logo></Logo>
         </div>
 
         <button className=" text-base text-secondary">
-          <Langage></Langage>
-          EN
+          {/* <Langage></Langage>
+          EN*/}
         </button>
       </div>
     </nav>
