@@ -1,5 +1,6 @@
 // Carousel projects (icons are paths; we’ll map to <Image/> in the page)
 export type ProjectData = {
+  slug: string;
   title: string;
   location: string;
   imageSrc: string;
@@ -8,6 +9,7 @@ export type ProjectData = {
 
 export const projectsData: ProjectData[] = [
   {
+    slug: "test",
     title: "Testbed for the D50 card",
     location: "SO-CONNECT",
     imageSrc: "/assets/projects/avatar.png",
@@ -20,6 +22,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
+    slug: "test",
     title: "Testbed for the D50 card",
     location: "SO-CONNECT",
     imageSrc: "/assets/projects/avatar.png",
@@ -29,6 +32,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
+    slug: "test",
     title: "Testbed for the D50 card",
     location: "SO-CONNECT",
     imageSrc: "/assets/projects/avatar.png",
@@ -38,6 +42,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
+    slug: "test",
     title: "Testbed for the D50 card",
     location: "SO-CONNECT",
     imageSrc: "/assets/projects/avatar.png",

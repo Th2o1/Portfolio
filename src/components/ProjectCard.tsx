@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import useIsSmallScreen from "../hooks/useIsSmallScreen";
 
 type ProjectCardProps = {
+  slug: string;
   title: string;
   location: string;
   imageSrc: string;
@@ -10,6 +12,7 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({
+  slug,
   title,
   location,
   imageSrc,
@@ -44,7 +47,10 @@ export default function ProjectCard({
               </div>
             ))}
         </div>
-        <div className="border-4 border-secondary p-2 rounded-xl">
+        <Link
+          href={`/projects/${slug}`}
+          className="border-4 border-secondary p-2 rounded-xl"
+        >
           <svg
             className="w-7 h-7 fill-light
                transition-transform duration-200 rotate-270"
@@ -52,7 +58,7 @@ export default function ProjectCard({
           >
             <path d="M5 7.5 10 12.5 15 7.5" />
           </svg>
-        </div>
+        </Link>
       </div>
     </div>
   );

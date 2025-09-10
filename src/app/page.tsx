@@ -34,6 +34,7 @@ const SLIDES = projectsData.map((p, idx) => (
         height={48}
       />
     ))}
+    slug={p.slug}
     title={p.title}
     location={p.location}
     imageSrc={p.imageSrc}
